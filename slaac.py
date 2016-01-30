@@ -75,7 +75,7 @@ print("Local IPv6/Mac: {0}, {1}".format(src_IPv6, src_mac))
 #This is meant for situations in which IPv6 setup is not 100%, so we
 #might want to assign an interface ourselves
 ans6, unans6 = srp(Ether(dst=mac, src=src_mac)/IPv6(dst=IPv6_tgt, src=src_IPv6)/ICMPv6EchoRequest(), 
-        iface="vboxnet0", timeout=4, verbose=0)
+        iface=iface6, timeout=4, verbose=0)
 
 if len(ans6) == 0:
     print("Host could not be reached on IPv6")
